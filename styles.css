@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+  color: #776e65;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  background-image: url("./halloween.gif");
+  padding: 1rem;
+  height: 100%;
+}
+body>div{
+  width: 800px;
+  height: 1000px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  background-color: rgb(250, 248, 239);
+}
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.top{
+  font-size: 3em;
+}
+
+.face-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+span{
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.header-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-style: italic;
+}
+
+.header-bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 1rem;
+  font-style: italic;
+  width: 100%;
+}
+
+button{
+  font-size: medium;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #8f7a66;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 6rem;
+}
+
+.btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.score,.maxscore{
+  background-color: #8f7a66;
+  text-align: center;
+  border-radius: 5px;
+  width: 6rem;
+  color: white;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.score p,.maxscore p{
+  color: white;
+}
+
+article{
+  width: 100%;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-bottom-ps{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-style: italic;
+  line-height: 2;
+}
+
+.header-bottom-p2,.header-bottom-p1{
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.play-container{
+  background-color: #bbada0;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.item{
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.inner{
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease-in-out;
+}
+
+.inner:not(:empty) {
+  animation: pop 0.15s ease-in-out;
+}
+
+.inner[data-value="2"] {
+  background-color: #eee4da;
+}
+
+.inner[data-value="4"] {
+  background-color: #ede0c8;
+}
+
+.inner[data-value="8"] {
+  background-color: #f2b179;
+  color: #f9f6f2;
+}
+
+.inner[data-value="16"] {
+  background-color: #f59563;
+  color: #f9f6f2;
+}
+
+.inner[data-value="32"] {
+  background-color: #f67c5f;
+  color: #f9f6f2;
+}
+
+.inner[data-value="64"] {
+  background-color: #f65e3b;
+  color: #f9f6f2;
+}
+
+.inner[data-value="128"] {
+  background-color: #edcf72;
+  color: #f9f6f2;
+  font-size: 2.5rem;
+}
+
+.inner[data-value="256"] {
+  background-color: #edcc61;
+  color: #f9f6f2;
+  font-size: 2.5rem;
+}
+
+.inner[data-value="512"] {
+  background-color: #edc850;
+  color: #f9f6f2;
+  font-size: 2.5rem;
+}
+
+.inner[data-value="1024"] {
+  background-color: #edc53f;
+  color: #f9f6f2;
+  font-size: 2rem;
+}
+
+.inner[data-value="2048"] {
+  background-color: #edc22e;
+  color: #f9f6f2;
+  font-size: 2rem;
+}
+
+.item.merge {
+  animation: merge-flash 0.3s ease-in-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes merge-flash {
+  0% {
+    background-color: rgba(238, 228, 218, 0.35);
+  }
+  50% {
+    background-color: rgba(238, 228, 218, 0.75);
+  }
+  100% {
+    background-color: white;
+  }
+}
